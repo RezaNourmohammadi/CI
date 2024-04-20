@@ -1,0 +1,112 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "102fe8c236",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "todo-load-pending-agreements"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "cebc521abb",
+      "name": "todo-load-pending-agreements",
+      "next": [
+        {
+          "condition": "temp.pending_agreements_count > 0",
+          "conditionType": "raw",
+          "node": "select_pending_agreement-copy"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "no-pending"
+        }
+      ],
+      "onEnter": [
+        "agreements/GetPendingAgreements {}",
+        "builtin/appendContext {\"contexts\":\"agreement\",\"ttl\":\"0\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "56191ba09b",
+      "name": "no-pending",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json#entry"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-1FhjF4"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "0932a42476",
+      "name": "select_pending_agreement-copy",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "check_validation"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-mof_lB",
+        "RichResponse {\"widget\":\"select\",\"payload\":\"temp.pending_agreements\"}"
+      ],
+      "onReceive": [
+        "SetSelectedPendingAgreement {\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "aadd4a37a9",
+      "name": "check_validation",
+      "next": [
+        {
+          "condition": "temp.pending_agreements_check == true",
+          "conditionType": "raw",
+          "node": "agreement-api-flow.flow.json#call_api"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "valid_name_text"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "4e02b866ab",
+      "name": "valid_name_text",
+      "next": [
+        {
+          "condition": "true",
+          "node": "select_pending_agreement-copy"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-BHB4b1"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

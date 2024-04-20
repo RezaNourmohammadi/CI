@@ -1,0 +1,14 @@
+{
+  "name": "debug",
+  "utterances": {
+    "en": [
+      "start debug mode",
+      "debug",
+      "enter test mode"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "global"
+  ]
+}

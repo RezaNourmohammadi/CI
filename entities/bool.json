@@ -1,0 +1,23 @@
+{
+  "id": "bool",
+  "name": "bool",
+  "type": "list",
+  "occurrences": [
+    {
+      "name": "yes",
+      "synonyms": [
+        "Yes"
+      ]
+    },
+    {
+      "name": "no",
+      "synonyms": [
+        "No"
+      ]
+    }
+  ],
+  "sensitive": false,
+  "fuzzy": 0.8,
+  "examples": [],
+  "pattern": ""
+}

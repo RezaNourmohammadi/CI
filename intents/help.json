@@ -1,0 +1,21 @@
+{
+  "name": "help",
+  "utterances": {
+    "en": [
+      "Help",
+      "Help please",
+      "Please help me",
+      "I don't understand",
+      "Can you explain",
+      "explain me please",
+      "Help me",
+      "Need assistance",
+      "Need clarification",
+      "Explain thi question"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "global"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "dlzxcupr4l",
+    "contentId": "builtin_single-choice-Tq_2xh",
+    "invalidContentId": "",
+    "keywords": {
+      "Twenty-Five Percent": [
+        "Twenty-Five Percent"
+      ],
+      "Fifty Percent": [
+        "Fifty Percent"
+      ],
+      "Seventy-Five Percent": [
+        "Seventy-Five Percent"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": "beat_new_song_s_1kueg0w5c"
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-Tq_2xh {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "703148"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"beat_new_song_s_1kueg0w5c\",\"contentId\":\"builtin_single-choice-Tq_2xh\",\"invalidContentId\":\"\",\"keywords\":{\"Twenty-Five Percent\":[\"Twenty-Five Percent\"],\"Fifty Percent\":[\"Fifty Percent\"],\"Seventy-Five Percent\":[\"Seventy-Five Percent\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"beat_new_song_s_1kueg0w5c\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-beat_new_song_s_1kueg0w5c'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "539112"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"beat_new_song_s_1kueg0w5c\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-beat_new_song_s_1kueg0w5c']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "387667"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "283503"
+    }
+  ]
+}

@@ -1,0 +1,621 @@
+[
+  {
+    "id": "builtin_text-error",
+    "formData": {
+      "text$en": "😯 Oops! I didn't understand that! I am still not train for this question. Please try something else!",
+      "typing$en": true,
+      "markdown$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2019-09-03T18:58:10.702Z",
+    "modifiedOn": "2022-08-12T17:08:36.419Z"
+  },
+  {
+    "id": "builtin_text-DnqV5O",
+    "formData": {
+      "text$en": "---\nmessage: Creative Intel is an innovative new tool to help you with your legal journey while selling intellectual property\nstyle: helpBackground\n---",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-01T23:06:53.463Z",
+    "modifiedOn": "2022-03-07T22:26:17.139Z"
+  },
+  {
+    "id": "builtin_text-mof_lB",
+    "formData": {
+      "text$en": "Ok, please select one of the available Agreements below to start:",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-04-02T20:50:38.438Z",
+    "modifiedOn": "2022-06-21T22:26:11.305Z"
+  },
+  {
+    "id": "builtin_text-GrBTa-",
+    "formData": {
+      "text$en": "Ok, we can continue this agreement later",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-05-30T20:02:34.333Z",
+    "modifiedOn": "2022-05-30T20:02:34.333Z"
+  },
+  {
+    "id": "builtin_text-vVint4",
+    "formData": {
+      "text$en": "Ok, I will remind you of this question later",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-05-31T19:03:41.565Z",
+    "modifiedOn": "2022-05-31T19:03:41.565Z"
+  },
+  {
+    "id": "builtin_text-_g-bod",
+    "formData": {
+      "text$en": "Select which of these pending agreements you want to continue:",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-06-06T19:37:59.608Z",
+    "modifiedOn": "2022-06-06T19:37:59.608Z"
+  },
+  {
+    "id": "builtin_text-ZKE2eh",
+    "formData": {
+      "text$en": "ok, you have completed all the interview questions",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-06-20T19:36:50.563Z",
+    "modifiedOn": "2022-06-20T19:36:50.563Z"
+  },
+  {
+    "id": "builtin_text-eu8Lj9",
+    "formData": {
+      "text$en": "please create a workspace on your control panel",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-06-21T20:46:58.547Z",
+    "modifiedOn": "2022-11-02T16:59:53.253Z"
+  },
+  {
+    "id": "builtin_text-f3JQGo",
+    "formData": {
+      "text$en": "Please select the workspace where agrement will be created",
+      "markdown$en": true,
+      "typing$en": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-06-21T20:47:57.882Z",
+    "modifiedOn": "2024-03-06T14:31:01.232Z"
+  },
+  {
+    "id": "builtin_text-9TVCaK",
+    "formData": {
+      "text$en": "---\nmessage: Hi, I'm C.I., your guide to getting your deals done...!\nhelp: Use this icons whenever you need extra information   .\nvideo: https://dev.botpress.intellcreative.ca/api/v1/bots/BOT_ID_PLACEHOLDER/media/hysf5x0cvf8mu7vcvnsv-big_buck_bunny_720p_1mb.mp4\n---\n",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-12T17:06:09.012Z",
+    "modifiedOn": "2024-02-26T08:09:53.305Z"
+  },
+  {
+    "id": "builtin_text-uLFq5T",
+    "formData": {
+      "text$en": "Ok, lets assing this question to... [todo]",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T16:58:44.570Z",
+    "modifiedOn": "2022-08-17T16:58:44.570Z"
+  },
+  {
+    "id": "builtin_text-KX5F2E",
+    "formData": {
+      "text$en": "ok, tell me what comment you want to add [todo...]",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T17:05:01.218Z",
+    "modifiedOn": "2022-08-17T17:05:01.218Z"
+  },
+  {
+    "id": "builtin_text-wPTG7Y",
+    "formData": {
+      "text$en": "ok, what side note do you want to add [todo...]",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T17:05:34.810Z",
+    "modifiedOn": "2022-08-17T17:05:34.810Z"
+  },
+  {
+    "id": "builtin_text-ywwaF8",
+    "formData": {
+      "text$en": "Do you want to do something else with this agreement at the moment ?  ",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T17:09:44.688Z",
+    "modifiedOn": "2022-08-17T17:09:44.688Z"
+  },
+  {
+    "id": "builtin_text-9S-UFI",
+    "formData": {
+      "text$en": "here is your link to download the agreement [todo...]",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T17:15:16.634Z",
+    "modifiedOn": "2022-08-17T17:15:16.634Z"
+  },
+  {
+    "id": "builtin_text-KrWPsi",
+    "formData": {
+      "text$en": "who do you want to invite ? please select [todo...]",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T17:15:47.840Z",
+    "modifiedOn": "2022-08-17T17:15:47.840Z"
+  },
+  {
+    "id": "builtin_text-xmZF8_",
+    "formData": {
+      "text$en": "who do you want to send this agreement ? please select [todo...]",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-08-17T17:16:22.765Z",
+    "modifiedOn": "2022-08-17T17:16:22.765Z"
+  },
+  {
+    "id": "builtin_text-TsILfJ",
+    "formData": {
+      "text$en": "you entered on debug mode",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-10-28T14:25:51.196Z",
+    "modifiedOn": "2022-10-28T14:25:51.196Z"
+  },
+  {
+    "id": "builtin_text-ajAUiS",
+    "formData": {
+      "text$en": "bot detected intent: {{event.nlu.intent.name}}, context: {{event.nlu.includedContexts.0}}",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-10-28T14:27:20.366Z",
+    "modifiedOn": "2022-10-28T15:07:44.995Z"
+  },
+  {
+    "id": "builtin_text-7b0TeB",
+    "formData": {
+      "text$en": "how can I help you ?",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-10-28T14:41:48.789Z",
+    "modifiedOn": "2022-10-28T14:41:48.789Z"
+  },
+  {
+    "id": "builtin_text-SOL0XL",
+    "formData": {
+      "text$en": "Entered Main - how can I help you ?",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-11-02T17:27:33.495Z",
+    "modifiedOn": "2022-11-02T17:27:33.495Z"
+  },
+  {
+    "id": "builtin_text-PU4Joo",
+    "formData": {
+      "text$en": "lets continue a pending agreement",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-26T12:49:11.130Z",
+    "modifiedOn": "2024-02-26T12:49:11.130Z"
+  },
+  {
+    "id": "builtin_text-1FhjF4",
+    "formData": {
+      "text$en": "No pending agreement found",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-26T12:52:02.754Z",
+    "modifiedOn": "2024-02-26T12:52:02.754Z"
+  },
+  {
+    "id": "builtin_text--jYf-b",
+    "formData": {
+      "text$en": "This part should be completed-- read from drafts--GetPendingAgreements should be modified- remove this text",
+      "markdown$en": true,
+      "typing$en": true,
+      "variations$en": [
+        ""
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-26T13:07:18.903Z",
+    "modifiedOn": "2024-02-26T13:08:34.773Z"
+  },
+  {
+    "id": "builtin_text-MufQIc",
+    "formData": {
+      "text$en": "This is test",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-27T20:04:55.546Z",
+    "modifiedOn": "2024-02-27T20:04:55.546Z"
+  },
+  {
+    "id": "builtin_text-qZBR9s",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:32.650Z",
+    "modifiedOn": "2024-02-28T12:49:32.650Z"
+  },
+  {
+    "id": "builtin_text-Ru0C93",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:32.650Z",
+    "modifiedOn": "2024-02-28T12:49:32.650Z"
+  },
+  {
+    "id": "builtin_text-7qVtDu",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:32.650Z",
+    "modifiedOn": "2024-02-28T12:49:32.650Z"
+  },
+  {
+    "id": "builtin_text-ATaCf-",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:32.651Z",
+    "modifiedOn": "2024-02-28T12:49:32.651Z"
+  },
+  {
+    "id": "builtin_text-AyimSj",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:32.651Z",
+    "modifiedOn": "2024-02-28T12:49:32.651Z"
+  },
+  {
+    "id": "builtin_text-K6J9fs",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.003Z",
+    "modifiedOn": "2024-02-28T12:49:38.003Z"
+  },
+  {
+    "id": "builtin_text-UNEigw",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.003Z",
+    "modifiedOn": "2024-02-28T12:49:38.003Z"
+  },
+  {
+    "id": "builtin_text-iF86Am",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.003Z",
+    "modifiedOn": "2024-02-28T12:49:38.003Z"
+  },
+  {
+    "id": "builtin_text-DZRzqr",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.003Z",
+    "modifiedOn": "2024-02-28T12:49:38.003Z"
+  },
+  {
+    "id": "builtin_text-i1kM4t",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.004Z",
+    "modifiedOn": "2024-02-28T12:49:38.004Z"
+  },
+  {
+    "id": "builtin_text-NidZWZ",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.004Z",
+    "modifiedOn": "2024-02-28T12:49:38.004Z"
+  },
+  {
+    "id": "builtin_text-cYk186",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.004Z",
+    "modifiedOn": "2024-02-28T12:49:38.004Z"
+  },
+  {
+    "id": "builtin_text-xbCaYQ",
+    "formData": {
+      "text$en": "yes_no question",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.208Z",
+    "modifiedOn": "2024-02-28T21:01:57.696Z"
+  },
+  {
+    "id": "builtin_text-mv14Ft",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.208Z",
+    "modifiedOn": "2024-02-28T12:49:38.208Z"
+  },
+  {
+    "id": "builtin_text-MQ8HqB",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.973Z",
+    "modifiedOn": "2024-02-28T12:49:38.973Z"
+  },
+  {
+    "id": "builtin_text-k1-R2-",
+    "formData": {
+      "text$en": "your entered input is not valid. please enter it again.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T12:49:38.973Z",
+    "modifiedOn": "2024-02-28T12:49:38.973Z"
+  },
+  {
+    "id": "builtin_text-uLU0Ix",
+    "formData": {
+      "text$en": "string\n",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T14:45:48.388Z",
+    "modifiedOn": "2024-02-28T14:45:48.388Z"
+  },
+  {
+    "id": "builtin_text-wHCnBh",
+    "formData": {
+      "text$en": "boolean",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T14:46:14.685Z",
+    "modifiedOn": "2024-02-28T14:46:14.685Z"
+  },
+  {
+    "id": "builtin_text-4Syzcs",
+    "formData": {
+      "text$en": "format\n",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T14:58:28.604Z",
+    "modifiedOn": "2024-02-28T14:58:28.604Z"
+  },
+  {
+    "id": "builtin_text-ICoX_B",
+    "formData": {
+      "text$en": "{{session.question_Title}}",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T14:59:17.224Z",
+    "modifiedOn": "2024-02-28T15:05:57.509Z"
+  },
+  {
+    "id": "builtin_text-Rz5In9",
+    "formData": {
+      "text$en": "boolean questiom",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T15:00:10.293Z",
+    "modifiedOn": "2024-02-28T15:00:10.293Z"
+  },
+  {
+    "id": "builtin_text-bYAAmE",
+    "formData": {
+      "text$en": "date",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T20:02:23.033Z",
+    "modifiedOn": "2024-02-28T20:02:23.033Z"
+  },
+  {
+    "id": "builtin_text-g3qNGj",
+    "formData": {
+      "text$en": "{{session.question_Title}}",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T21:05:31.767Z",
+    "modifiedOn": "2024-02-28T21:05:31.767Z"
+  },
+  {
+    "id": "builtin_text-HWQPG6",
+    "formData": {
+      "text$en": "{{session.question_Title}}",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T21:28:27.779Z",
+    "modifiedOn": "2024-02-28T21:28:27.779Z"
+  },
+  {
+    "id": "builtin_text-z8pOz_",
+    "formData": {
+      "text$en": "{{session.question_Title}}",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-02-28T21:33:16.165Z",
+    "modifiedOn": "2024-02-28T21:33:16.165Z"
+  },
+  {
+    "id": "builtin_text-asASun",
+    "formData": {
+      "text$en": "Workspace not found. Please select an existing one.",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-06T12:37:58.611Z",
+    "modifiedOn": "2024-03-06T12:37:58.611Z"
+  },
+  {
+    "id": "builtin_text-MQtkQt",
+    "formData": {
+      "text$en": "Please enter a valid email address in the format: yourname@example.com",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-10T08:05:43.172Z",
+    "modifiedOn": "2024-03-10T08:05:43.172Z"
+  },
+  {
+    "id": "builtin_text-f5D5tO",
+    "formData": {
+      "text$en": "invalid array options",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-14T16:43:56.478Z",
+    "modifiedOn": "2024-03-14T16:43:56.478Z"
+  },
+  {
+    "id": "builtin_text-BHB4b1",
+    "formData": {
+      "text$en": "Please enter a valid agreement",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-31T00:50:37.242Z",
+    "modifiedOn": "2024-03-31T00:50:37.242Z"
+  },
+  {
+    "id": "builtin_text-ctW09h",
+    "formData": {
+      "text$en": "Template not found. Please select from the list",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-03-31T18:30:34.140Z",
+    "modifiedOn": "2024-03-31T18:30:34.140Z"
+  },
+  {
+    "id": "builtin_text-pG7JNF",
+    "formData": {
+      "text$en": "hi its working",
+      "markdown$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2024-04-13T12:17:03.780Z",
+    "modifiedOn": "2024-04-13T12:17:03.780Z"
+  }
+]

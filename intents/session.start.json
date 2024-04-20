@@ -1,0 +1,12 @@
+{
+  "name": "session.start",
+  "utterances": {
+    "en": [
+      "--init session--"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "global"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "agreement.exit",
+  "utterances": {
+    "en": [
+      "I want to finish this later",
+      "exit this agreement",
+      "continue later",
+      "exit agreement",
+      "leave questionnaire",
+      "exit contract",
+      "leave agreement",
+      "get out",
+      "get out of this",
+      "quit agreement"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "agreement"
+  ]
+}

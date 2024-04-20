@@ -1,0 +1,237 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "fa45e972ab",
+      "name": "entry",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "session.question_Type   == 'string' ",
+          "conditionType": "raw",
+          "node": "string-response"
+        },
+        {
+          "condition": "session.question_Type == 'boolean'",
+          "conditionType": "props",
+          "node": "boolean"
+        },
+        {
+          "condition": "session.question_Type  == 'number'",
+          "conditionType": "props",
+          "node": "number-questions"
+        },
+        {
+          "condition": "session.question_Type   == 'array'",
+          "conditionType": "props",
+          "node": "array-type-questions"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4e589234f7",
+      "name": "string-response",
+      "next": [
+        {
+          "condition": " session.format && session.format !== ' '",
+          "conditionType": "raw",
+          "node": "question_with_format"
+        },
+        {
+          "condition": "!session.format && session.enum_Options &&  session.enum_Options.length>0",
+          "conditionType": "raw",
+          "node": "enum_questions"
+        },
+        {
+          "condition": "!session.format && !session.enum",
+          "conditionType": "raw",
+          "node": "only-string"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7e2860bc0c",
+      "name": "boolean",
+      "next": [
+        {
+          "condition": "true",
+          "node": "boolean_question"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "7353c402bf",
+      "name": "question_with_date_format",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "last-field"
+        }
+      ],
+      "onEnter": [
+        "agreement/date_question_retrieval {\"name\":\"\",\"value\":\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "08c348ec11",
+      "name": "enum_questions",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "last-field"
+        }
+      ],
+      "onEnter": [
+        "agreements/enum_question_retrieval {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "55ade5ff01",
+      "name": "boolean_question",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "last-field"
+        }
+      ],
+      "onEnter": [
+        "agreement/yes_no_questions_retrieval {\"name\":\"\",\"value\":\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "217ac22bd0",
+      "name": "only-string",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "last-field"
+        }
+      ],
+      "onEnter": [
+        "agreements/string_question {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "3abdfe9b47",
+      "name": "number-questions",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "agreement-api-flow.flow.json#set-response"
+        }
+      ],
+      "onEnter": [
+        "agreements/number_questions {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "5731f8ba2b",
+      "name": "question_with_format",
+      "next": [
+        {
+          "condition": "session.format == 'date'",
+          "conditionType": "raw",
+          "node": "question_with_date_format"
+        },
+        {
+          "condition": "session.format == 'email'",
+          "conditionType": "raw",
+          "node": "question_with_email_format"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "1eff098bbc",
+      "name": "question_with_email_format",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "last-field"
+        }
+      ],
+      "onEnter": [
+        "agreements/email_question_repeat {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "8928f141b4",
+      "name": "array-type-questions",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "array_type_retrieval"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-f5D5tO"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "e10d96bac3",
+      "name": "array_type_retrieval",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "last-field"
+        }
+      ],
+      "onEnter": [
+        "agreements/array_type_retrieval {\"name\":\"\",\"value\":\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "6f4daa106c",
+      "name": "last-field",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "agreement-api-flow.flow.json#set-response"
+        }
+      ],
+      "onEnter": [
+        "agreements/revise_last_field {\"name\":\"\",\"value\":\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

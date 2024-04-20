@@ -1,0 +1,15 @@
+{
+  "name": "agreement.assign_question",
+  "utterances": {
+    "en": [
+      "Someone else knows",
+      "Somebody else knows",
+      "Ask someone else",
+      "Ask somebody else"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "agreement"
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "entry",
+  "description": "",
+  "nodes": [
+    {
+      "id": "5f912288ff",
+      "name": "call_api",
+      "next": [
+        {
+          "condition": "temp.interview_api_status=='complete'",
+          "conditionType": "raw",
+          "node": "save_interview"
+        },
+        {
+          "condition": "true",
+          "node": "set-response"
+        }
+      ],
+      "onEnter": [
+        "agreements/InterviewQuestionFlow {\"template\":\"{{temp.interview_api_template}}\",\"field\":\"{{temp.interview_api_flow_field}}\",\"input\":\"{{temp.interview_api_flow_response}}\"}",
+        "builtin/appendContext {\"contexts\":\"agreement\",\"ttl\":\"10\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "19e6fe67ff",
+      "name": "loop-await-answer",
+      "next": [
+        {
+          "condition": "event.nlu.intent.name === 'agreement.exit'",
+          "conditionType": "intent",
+          "node": "exit_agreement"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'agreement.skip_question'",
+          "conditionType": "intent",
+          "node": "skip_question"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'agreement.assign_question'",
+          "conditionType": "intent",
+          "node": "__todo__assign_question"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'agreement.add_comments'",
+          "conditionType": "intent",
+          "node": "__todo__add_comments"
+        },
+        {
+          "condition": "event.nlu.intent.name === 'agreement.add_notes'",
+          "conditionType": "intent",
+          "node": "__todo__add_notes"
+        },
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "d35c9acc3d",
+      "name": "entry",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_field\",\"value\":\"\"}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_response\",\"value\":\"\"}",
+        "builtin/appendContext {\"contexts\":\"agreement\",\"ttl\":\"1000\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "node": "load_studios"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "9c8a6f7db0",
+      "name": "list_templates",
+      "next": [
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-mof_lB",
+        "templates/list {}"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_template\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "7e1bde192d",
+      "name": "exit_agreement",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-GrBTa-",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_response\",\"value\":\"\"}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_field\",\"value\":\"\"}",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_response\",\"value\":\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "9b435686b9",
+      "name": "skip_question",
+      "next": [
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-vVint4",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_response\",\"value\":\"--skip--\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "839c8b321d",
+      "name": "select_pending_agreement",
+      "next": [
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-mof_lB",
+        "RichResponse {\"widget\":\"select\",\"payload\":\"temp.pending_agreements\"}"
+      ],
+      "onReceive": [
+        "SetSelectedPendingAgreement {\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "22db61821f",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "no_pending_agreements",
+      "flow": "skills/choice-ae3427.flow.json",
+      "next": [
+        {
+          "caption": "User picked [true]",
+          "condition": "temp['skill-choice-ret-g85m7hqgiw'] == \"true\"",
+          "node": "entry"
+        },
+        {
+          "caption": "User picked [false]",
+          "condition": "temp['skill-choice-ret-g85m7hqgiw'] == \"false\"",
+          "conditionType": "raw",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "96116dd7fd",
+      "name": "load_studios",
+      "next": [
+        {
+          "condition": " temp.available_studios_count == 1 ",
+          "conditionType": "raw",
+          "node": "choice-23c09c"
+        },
+        {
+          "condition": " temp.available_studios_count >= 2 ",
+          "conditionType": "raw",
+          "node": "chose_studio"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "no_studio"
+        }
+      ],
+      "onEnter": [
+        "studios/list {}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "65e542657f",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-23c09c",
+      "flow": "skills/choice-23c09c.flow.json",
+      "next": [
+        {
+          "caption": "User picked [yes]",
+          "condition": "temp['skill-choice-ret-95o05cqoq3'] == \"yes\"",
+          "node": "set_default_studio"
+        },
+        {
+          "caption": "User picked [no]",
+          "condition": "temp['skill-choice-ret-95o05cqoq3'] == \"no\"",
+          "node": "no_studio"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "7cda903168",
+      "name": "no_studio",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-eu8Lj9"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "4ee07dd443",
+      "name": "set_default_studio",
+      "next": [
+        {
+          "condition": "true",
+          "node": "list_templates"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"selected_studio\",\"value\":\"{{temp.default_studio.id}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "45865b6b87",
+      "name": "chose_studio",
+      "next": [
+        {
+          "condition": "true",
+          "node": "list_templates"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-f3JQGo",
+        "RichResponse {\"widget\":\"select\",\"payload\":\"temp.available_studios\"}"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"selected_studio\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "ea0f9c76c0",
+      "name": "__todo__assign_question",
+      "next": [
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-uLFq5T",
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_response\",\"value\":\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "3398b2b87c",
+      "name": "__todo__add_notes",
+      "next": [
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-wPTG7Y"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "b421538513",
+      "name": "__todo__add_comments",
+      "next": [
+        {
+          "condition": "true",
+          "node": "call_api"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-KX5F2E"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "98e34f3259",
+      "name": "__todo__download_agreement",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-9S-UFI"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "9ef05a7872",
+      "name": "__todo__invite_to_agreement",
+      "next": [
+        {
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-KrWPsi"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "8f67de4f80",
+      "name": "__todo__share_by_email",
+      "next": [
+        {
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-xmZF8_"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "0081b1e979",
+      "name": "set-response",
+      "next": [
+        {
+          "condition": "true",
+          "node": "loop-await-answer"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"temp\",\"name\":\"interview_api_flow_response\",\"value\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "90a6f830a9",
+      "name": "load_pending_agreements",
+      "next": [
+        {
+          "condition": "temp.pending_agreements_count > 0",
+          "conditionType": "raw",
+          "node": "select_pending_agreement"
+        },
+        {
+          "condition": "true",
+          "node": "no_pending_agreements"
+        }
+      ],
+      "onEnter": [
+        "GetPendingAgreementsApi {}",
+        "builtin/appendContext {\"contexts\":\"agreement\",\"ttl\":\"0\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "6e986f2073",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-060002",
+      "flow": "skills/choice-060002.flow.json",
+      "next": [
+        {
+          "caption": "User picked [view_ag...]",
+          "condition": "temp['skill-choice-ret-uyayltbnth'] == \"view_agreement\"",
+          "node": "view_agreement"
+        },
+        {
+          "caption": "User picked [download]",
+          "condition": "temp['skill-choice-ret-uyayltbnth'] == \"download\"",
+          "node": "__todo__download_agreement"
+        },
+        {
+          "caption": "User picked [go_to_d...]",
+          "condition": "temp['skill-choice-ret-uyayltbnth'] == \"go_to_dashboard\"",
+          "node": "go_to_dashboard"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "f8dafdcffd",
+      "name": "view_agreement",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [
+        "SendXssEvent {\"action\":\"vueOpenAgreement\",\"payload\":\"{\\\"agreementId\\\": \\\"{{temp.interview_api_agreement}}\\\"}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "6b818b2d43",
+      "name": "go_to_dashboard",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "onEnter": [
+        "SendXssEvent {\"action\":\"vueGoToDashboard\",\"payload\":\"{}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "070b569400",
+      "name": "save_interview",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "choice-060002"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ZKE2eh",
+        "agreements/create {\"studio_id\":\"{{temp.selected_studio}}\",\"template_id\":\"{{temp.interview_api_template}}\"}",
+        "builtin/resetContext {}",
+        "SendXssEvent {\"action\":\"chatbotDisplayInterviewProgress\",\"payload\":\"{}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

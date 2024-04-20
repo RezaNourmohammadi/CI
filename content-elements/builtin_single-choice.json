@@ -1,0 +1,104 @@
+[
+  {
+    "id": "builtin_single-choice-mPKqS6",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Yes",
+          "value": "true"
+        },
+        {
+          "title": "No",
+          "value": "false"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": false,
+      "typing$en": true,
+      "text$en": "You dont seemt to have pending agreements in your account.  Would you like to create a new one ?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-06-07T16:20:45.764Z",
+    "modifiedOn": "2022-06-07T16:20:45.764Z"
+  },
+  {
+    "id": "builtin_single-choice-VHbtL3",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Yes",
+          "value": "yes"
+        },
+        {
+          "title": "No",
+          "value": "no"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": true,
+      "typing$en": true,
+      "text$en": "Do you want to create the agreement in the workspace: {{temp.default_studio.name}} ?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-06-21T20:43:23.655Z",
+    "modifiedOn": "2023-03-10T21:00:43.555Z"
+  },
+  {
+    "id": "builtin_single-choice-G9GdD8",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Start a new Agreement",
+          "value": "create-agreement"
+        },
+        {
+          "title": "Education Material",
+          "value": "education-material"
+        },
+        {
+          "title": "continue pending agreement",
+          "value": "pending-agreement"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": false,
+      "typing$en": true,
+      "text$en": "how can I help you today ?",
+      "displayInMessage$en": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-11-02T17:33:04.892Z",
+    "modifiedOn": "2024-02-26T12:58:08.529Z"
+  },
+  {
+    "id": "builtin_single-choice-9nlr3r",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "View/Edit Agreement",
+          "value": "view_agreement"
+        },
+        {
+          "title": "Download PDF",
+          "value": "download"
+        },
+        {
+          "title": "Go to Dashboard",
+          "value": "go_to_dashboard"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": false,
+      "typing$en": true,
+      "text$en": "Do you want to do something else with this agreement at the moment ?",
+      "displayInMessage$en": false
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-11-07T15:49:08.989Z",
+    "modifiedOn": "2024-03-16T13:02:24.189Z"
+  }
+]

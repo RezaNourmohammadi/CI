@@ -1,0 +1,17 @@
+{
+  "name": "agreement.add_comments",
+  "utterances": {
+    "en": [
+      "Make comment",
+      "Make comment on agreement",
+      "Make comment on document",
+      "Make comment on contract",
+      "Make comment on deal",
+      "Add comment"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "agreement"
+  ]
+}

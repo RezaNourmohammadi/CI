@@ -1,0 +1,21 @@
+{
+  "name": "agreement.start",
+  "utterances": {
+    "en": [
+      "create an agreement",
+      "fill agreement",
+      "start agreement",
+      "start contract",
+      "Draft agreement",
+      "Start agreement",
+      "Start contract",
+      "n﻿ew agerement",
+      "d﻿raft new contract",
+      "I﻿initiate agreement"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "global"
+  ]
+}

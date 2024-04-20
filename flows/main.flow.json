@@ -1,0 +1,73 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "entry-start",
+  "nodes": [
+    {
+      "id": "entry",
+      "name": "entry-start",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "action_selection"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-9TVCaK",
+        "builtin/resetContext {}"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "66fa001678",
+      "name": "intro-help",
+      "next": [
+        {
+          "condition": "true",
+          "node": "entry-start"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-DnqV5O"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-d5e36f",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "action_selection",
+      "flow": "skills/choice-d5e36f.flow.json",
+      "next": [
+        {
+          "caption": "User picked [create-...]",
+          "condition": "temp['skill-choice-ret-3y5weq0ez5'] == \"create-agreement\"",
+          "node": "agreement-api-flow.flow.json"
+        },
+        {
+          "caption": "User picked [educati...]",
+          "condition": "temp['skill-choice-ret-3y5weq0ez5'] == \"education-material\"",
+          "node": "intro-help"
+        },
+        {
+          "caption": "User picked [pending...]",
+          "condition": "temp['skill-choice-ret-3y5weq0ez5'] == \"pending-agreement\"",
+          "conditionType": "raw",
+          "node": "pending-agreement-check.flow.json#entry"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "error.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

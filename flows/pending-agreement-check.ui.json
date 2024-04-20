@@ -1,0 +1,138 @@
+{
+  "nodes": [
+    {
+      "id": "102fe8c236",
+      "position": {
+        "x": 100,
+        "y": 100
+      }
+    },
+    {
+      "id": "cebc521abb",
+      "position": {
+        "x": 460,
+        "y": 55
+      }
+    },
+    {
+      "id": "56191ba09b",
+      "position": {
+        "x": 725,
+        "y": 225
+      }
+    },
+    {
+      "id": "0932a42476",
+      "position": {
+        "x": 770,
+        "y": -25
+      }
+    },
+    {
+      "id": "aadd4a37a9",
+      "position": {
+        "x": 1045,
+        "y": 25
+      }
+    },
+    {
+      "id": "4e02b866ab",
+      "position": {
+        "x": 1420,
+        "y": 45
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "0932a42476",
+      "sourcePort": "out0",
+      "target": "aadd4a37a9",
+      "points": [
+        {
+          "x": 970,
+          "y": 137
+        },
+        {
+          "x": 1046,
+          "y": 42
+        }
+      ]
+    },
+    {
+      "source": "102fe8c236",
+      "sourcePort": "out0",
+      "target": "cebc521abb",
+      "points": [
+        {
+          "x": 300,
+          "y": 144
+        },
+        {
+          "x": 460,
+          "y": 73
+        }
+      ]
+    },
+    {
+      "source": "4e02b866ab",
+      "sourcePort": "out0",
+      "target": "0932a42476",
+      "points": [
+        {
+          "x": 1620,
+          "y": 132
+        },
+        {
+          "x": 771,
+          "y": -8
+        }
+      ]
+    },
+    {
+      "source": "aadd4a37a9",
+      "sourcePort": "out1",
+      "target": "4e02b866ab",
+      "points": [
+        {
+          "x": 1245,
+          "y": 95
+        },
+        {
+          "x": 1421,
+          "y": 63
+        }
+      ]
+    },
+    {
+      "source": "cebc521abb",
+      "sourcePort": "out0",
+      "target": "0932a42476",
+      "points": [
+        {
+          "x": 660,
+          "y": 172
+        },
+        {
+          "x": 771,
+          "y": -8
+        }
+      ]
+    },
+    {
+      "source": "cebc521abb",
+      "sourcePort": "out1",
+      "target": "56191ba09b",
+      "points": [
+        {
+          "x": 660,
+          "y": 199
+        },
+        {
+          "x": 725,
+          "y": 242
+        }
+      ]
+    }
+  ]
+}

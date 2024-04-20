@@ -1,0 +1,98 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "j4s0va68g5",
+    "contentId": "builtin_single-choice-KWuiiy",
+    "invalidContentId": "",
+    "keywords": {
+      "No": [
+        "No"
+      ],
+      "Yes": [
+        "Yes"
+      ],
+      "Yes, if approved in advance": [
+        "Yes, if approved in advance"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": "samples_permitt_1ktx6qngi"
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-KWuiiy {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "234022"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"samples_permitt_1ktx6qngi\",\"contentId\":\"builtin_single-choice-KWuiiy\",\"invalidContentId\":\"\",\"keywords\":{\"No\":[\"No\"],\"Yes\":[\"Yes\"],\"Yes, if approved in advance\":[\"Yes, if approved in advance\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"samples_permitt_1ktx6qngi\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-samples_permitt_1ktx6qngi'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "396511"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"samples_permitt_1ktx6qngi\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-samples_permitt_1ktx6qngi']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "884472"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "337280"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "agreement.skip_question",
+  "utterances": {
+    "en": [
+      "skip this question",
+      "skip this one",
+      "next question",
+      "leave this question for later",
+      "Skip question",
+      "Move on",
+      "I’ll pass"
+    ]
+  },
+  "slots": [],
+  "contexts": [
+    "agreement"
+  ]
+}
